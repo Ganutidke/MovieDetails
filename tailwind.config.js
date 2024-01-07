@@ -6,7 +6,11 @@ export default {
      "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+       backgroundImage: {
+        'hero-pattern': "url('./src/assets/beams.jpg')",
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
