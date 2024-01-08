@@ -3,17 +3,19 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-     "./node_modules/flowbite/**/*.js",
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
-       backgroundImage: {
+      backgroundImage: {
         'hero-pattern': "url('./src/assets/beams.jpg')",
       }
     },
   },
   plugins: [
     require('flowbite/plugin')
+
   ],
 }
 
