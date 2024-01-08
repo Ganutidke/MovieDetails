@@ -20,11 +20,11 @@ const CardModel = () => {
                     throw new Error(`Failed to fetch data from API: ${response.statusText}`);
                 }
                 const data = await response.json();
-                console.log(data.Ratings)
-                console.log(ratings)
+                // console.log(data.Ratings)
+                // console.log(ratings)
                 setResult(data)
                 setRatings(data.Ratings)
-                console.log(ratings)
+                // console.log(ratings)
             } catch (error) {
                 console.log(error)
             }
@@ -47,7 +47,9 @@ const CardModel = () => {
                                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                                     <h2 className="text-sm title-font text-gray-500 tracking-widest capitalize">{result.Type}</h2>
                                     <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{result.Title}</h1>
-                                    <div className="flex mb-4">
+                                    <h1 className="leading-relaxed text-xs">Genre : {result.Genre}</h1>
+                                    <div className="flex my-4">
+                                        <p>Ratings : </p>
                                         <span className="flex flex-col gap-1 ">
                                             {
                                                 ratings.map((rating, index) => (
@@ -59,7 +61,13 @@ const CardModel = () => {
 
                                     </div>
                                     <div className='flex flex-col gap-2'>
+                                        <p className="leading-relaxed">Runtime : {result.Runtime}</p>
+                                        <p className="leading-relaxed">Released On : {result.Released}</p>
+                                        <p className="leading-relaxed">Total Seasons  : {result.totalSeasons}</p>
+                                        <p className="leading-relaxed">Year  : {result.Year}</p>
                                         <p className="leading-relaxed">{result.Plot}</p>
+                                        <p className="leading-relaxed">Director : {result.Director}</p>
+                                        <p className="leading-relaxed">Writer : {result.Writer}</p>
                                         <p className="leading-relaxed"><span>Country : </span> {result.Country}</p>
                                         <p className="leading-relaxed"><span>Languages : </span> {result.Language}</p>
                                         <p className="leading-relaxed"><span>Awards : </span> {result.Awards}</p>
